@@ -42,6 +42,11 @@ main {
   width: 100vw;
 }
 
+form {
+  height: 100vh;
+  width: 100vw;
+}
+
 .title {
   font-family: 'Markazi Text', serif;
 font-size: 64px;
