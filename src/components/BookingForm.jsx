@@ -35,19 +35,21 @@ export default function BookingForm({availableTimes, dispatch, submitForm}) {
       event.preventDefault()
       submitForm(formData)
     }
+
+    const currentDate = new Date()
     const options = availableTimes.map(time => <option key={time}>{time}</option>)
     return (
         <form onSubmit={handleSubmit}>
         <label htmlFor="res-date">Choose date</label>
-        <input type="date" id="res-date" name="date" value={formData.date} onChange={handleDateChange}/>
+        <input type="date" id="res-date" name="date" value={formData.date} onChange={handleDateChange} required min={currentDate}/>
         <label htmlFor="res-time">Choose time</label>
-        <select id="res-time " name="time" value={formData.time} onChange={handleFormChange}>
+        <select id="res-time " name="time" value={formData.time} onChange={handleFormChange} required>
            {options}
         </select>
         <label htmlFor="guests">Number of guests</label>
-        <input type="number" placeholder="1" min="1" max="10" id="guests" name="noOfGuests" value={formData.noOfGuests} onChange={handleFormChange}/>
+        <input type="number" placeholder="1" min="1" max="10" required id="guests" name="noOfGuests" value={formData.noOfGuests} onChange={handleFormChange}/>
         <label htmlFor="occasion">Occasion</label>
-        <select id="occasion" name="occasion" value={formData.occasion} onChange={handleFormChange}>
+        <select id="occasion" name="occasion" required value={formData.occasion} onChange={handleFormChange}>
            <option>Birthday</option>
            <option>Anniversary</option>
         </select>
