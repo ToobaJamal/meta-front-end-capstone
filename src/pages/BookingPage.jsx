@@ -1,16 +1,8 @@
 import { useState, useReducer } from "react"
 import BookingForm from "../components/BookingForm"
-import { fetchAPI } from "../api"
-  // function updateTimes(state, action) {
-  //   switch (action.type) {
-  //     case 'update': {
-  //       return {
-  //         initializeTimes
-  //       }
-  //     }
-  //   }
-  //   throw Error('Unknown action: ' + action.type);
-  // }
+import { fetchAPI, submitAPI } from "../api"
+import { useNavigate } from "react-router-dom";
+ 
   console.log(fetchAPI(new Date("2018-12-31")))
 export default function BookingPage() {
     
@@ -32,7 +24,15 @@ export default function BookingPage() {
   }
 
   console.log(updateTimes)
+  const navigate = useNavigate();
 
+  function submitForm(formData) {
+    const isSubmitted = submitAPI(formData);
+
+    if (isSubmitted) {
+      navigate("/confirmed");
+    }
+  }
   function reducer(state, action) {
     let newState
     switch (action.type) {
@@ -40,7 +40,7 @@ export default function BookingPage() {
       const newDate = new Date(action.payload);
       newState = updateTimes(newDate)
       break;
-      
+
       default:
         throw new Error()
     }
@@ -49,7 +49,7 @@ export default function BookingPage() {
 
   const [availableTimes, dispatch] = useReducer(reducer, initializeTimes(date))
     return (
-        <BookingForm availableTimes={availableTimes} dispatch={dispatch}/>
+        <BookingForm availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm}/>
     )
   }
   
