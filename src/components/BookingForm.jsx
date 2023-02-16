@@ -1,12 +1,13 @@
 import { useState } from "react"
 export default function BookingForm({availableTimes, dispatch}) {
+    console.log(dispatch)
     const [formData, setFormData] = useState({
         date: "",
         time: "17:00",
         noOfGuests: 1,
         occasion: "Birthday"
     })
-    
+    console.log(availableTimes)
     const handleFormChange = (event) => {
       const { name, value } = event.target
       setFormData((prevFormData) => ({
@@ -15,13 +16,17 @@ export default function BookingForm({availableTimes, dispatch}) {
       }))
     }
 
-    const handleDateChange = (event) => {
+    const handleDateChange = async (event) => {
       const { name, value } = event.target
+      
       setFormData((prevFormData) => ({
         ...prevFormData,
         [name]: value
       }))
+      
+      console.log( dispatch({ type: 'UPDATE_TIMES', payload: value }))
       dispatch({ type: 'UPDATE_TIMES', payload: value })
+      console.log(formData.date)
     }
     console.log(formData)
     const options = availableTimes.map(time => <option key={time}>{time}</option>)
