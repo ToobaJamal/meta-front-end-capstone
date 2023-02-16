@@ -1,5 +1,6 @@
 import { useState } from "react"
-export default function BookingForm({availableTimes, dispatch}) {
+import { useNavigate } from "react-router-dom"
+export default function BookingForm({availableTimes, dispatch, submitForm}) {
     console.log(dispatch)
     const [formData, setFormData] = useState({
         date: "",
@@ -29,9 +30,14 @@ export default function BookingForm({availableTimes, dispatch}) {
       console.log(formData.date)
     }
     console.log(formData)
+
+    const handleSubmit = (event) => {
+      event.preventDefault()
+      submitForm(formData)
+    }
     const options = availableTimes.map(time => <option key={time}>{time}</option>)
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
         <label htmlFor="res-date">Choose date</label>
         <input type="date" id="res-date" name="date" value={formData.date} onChange={handleDateChange}/>
         <label htmlFor="res-time">Choose time</label>
