@@ -7,25 +7,25 @@ export default function Footer() {
         <div className="footer-content">
             <div className="footer-nav">
                 <p className="footer-head">Navigtion</p>
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Menu</a>
-                <a href="#">Reservations</a>
-                <a href="#">Order Online</a>
-                <a href="#">Login</a>
+                <a href="#" className="footer-item">Home</a>
+                <a href="#" className="footer-item">About</a>
+                <a href="#" className="footer-item">Menu</a>
+                <a href="#" className="footer-item">Reservations</a>
+                <a href="#" className="footer-item">Order Online</a>
+                <a href="#" className="footer-item">Login</a>
             </div>
             <div className="footer-contact">
                 <p className="footer-head">Contact</p>
-                <a href="#">Address</a>
-                <a href="#">Phone Number</a>
-                <a href="#">Email</a>
+                <a href="#" className="footer-item">Address</a>
+                <a href="#" className="footer-item">Phone Number</a>
+                <a href="#" className="footer-item">Email</a>
             </div>
             <div className="footer-social">
                 <p className="footer-head">Social Media</p>
-                <a href="#">Facebook</a>
-                <a href="#">Instagram</a>
-                <a href="#">TikTok</a>
-                <a href="#">Twitter</a>
+                <a href="#" className="footer-item">Facebook</a>
+                <a href="#" className="footer-item">Instagram</a>
+                <a href="#" className="footer-item">TikTok</a>
+                <a href="#" className="footer-item">Twitter</a>
             </div>
         </div>
       </footer>
