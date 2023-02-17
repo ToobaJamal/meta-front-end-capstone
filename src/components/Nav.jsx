@@ -5,12 +5,12 @@ export default function Nav() {
     return (
       <nav>
      
-        <Link to="/">HOME</Link>
-        <a href="#">ABOUT</a>
-        <a href="#">MENU</a>
-        <Link to="/booking">RESERVATIONS</Link>
-        <a href="#">ORDER ONLINE</a>
-        <a href="#">LOGIN</a>
+        <Link to="/" className="nav-item">HOME</Link>
+        <a href="#" className="nav-item">ABOUT</a>
+        <a href="#" className="nav-item">MENU</a>
+        <Link to="/booking" className="nav-item">RESERVATIONS</Link>
+        <a href="#" className="nav-item">ORDER ONLINE</a>
+        <a href="#" className="nav-item">LOGIN</a>
    
       </nav>
     )
