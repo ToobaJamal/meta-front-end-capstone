@@ -47,7 +47,7 @@ export default function BookingForm({availableTimes, dispatch, submitForm}) {
     const currentDate = new Date().toISOString().split("T")[0]
     const options = availableTimes.map(time => <option key={time}>{time}</option>)
     return (
-        <form onSubmit={handleSubmit} onChange={() => setSubmitDisabled(!isFormValid())}>
+        <form onSubmit={handleSubmit}>
         <label htmlFor="first-name">First Name</label>
         <input type="text" id="first-name" name="firstName" value={formData.firstName} onChange={handleFormChange} required />
         <label htmlFor="last-name">Last Name</label>
