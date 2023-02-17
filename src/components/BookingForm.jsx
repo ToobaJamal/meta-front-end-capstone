@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom"
 export default function BookingForm({availableTimes, dispatch, submitForm}) {
     console.log(dispatch)
     const [formData, setFormData] = useState({
+        firstName: "",
+        lastName: "",
+        contactNumber: "",
         date: "",
         time: "17:00",
         noOfGuests: 1,
@@ -36,10 +39,23 @@ export default function BookingForm({availableTimes, dispatch, submitForm}) {
       submitForm(formData)
     }
 
-    const currentDate = new Date()
+    const isFormValid = () => {
+      const form = document.querySelector('form')
+      return form.checkValidity()
+    }
+
+    const currentDate = new Date().toISOString().split("T")[0]
     const options = availableTimes.map(time => <option key={time}>{time}</option>)
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} onChange={() => setSubmitDisabled(!isFormValid())}>
+        <label htmlFor="first-name">First Name</label>
+        <input type="text" id="first-name" name="firstName" value={formData.firstName} onChange={handleFormChange} required />
+        <label htmlFor="last-name">Last Name</label>
+        <input type="text" id="last-name" name="lastName" value={formData.lastName} onChange={handleFormChange} required />
+        <label htmlFor="contact-number">Contact Number</label>
+        <input type="text" id="contact-number" name="contactNumber" placeholder="123-456-7890"
+        value={formData.contactNumber} onChange={handleFormChange} 
+        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
         <label htmlFor="res-date">Choose date</label>
         <input type="date" id="res-date" name="date" value={formData.date} onChange={handleDateChange} required min={currentDate}/>
         <label htmlFor="res-time">Choose time</label>
