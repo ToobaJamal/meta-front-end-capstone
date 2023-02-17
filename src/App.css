@@ -259,6 +259,25 @@ line-height: 22px;
 letter-spacing: 0em;
 text-align: left;
 }
+.confirmed-title {
+ 
+  text-align: center;
+}
+.confirmed-subtitle {
+  color: #000000;
+  text-align: center;
+  max-width: 600px;
+  width: 50%;
+}
+.confirmed-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  padding-block: 2em;
+  
+}
 .item-price, .reviewer-rating {
   font-family: Karla;
 font-size: 16px;
@@ -349,6 +368,7 @@ line-height: 26px;
 letter-spacing: 0em;
 text-align: left;
 background-color: #EDEFEE;
+height: 10%;
 
 }
 
@@ -432,6 +452,9 @@ background-color: #EDEFEE;
   }
   .card {
     width: 60%;
+  }
+  .confirmed-main {
+    height: calc(100vh - 216px);
   }
   .img-wrapper {
     /* position: absolute;
