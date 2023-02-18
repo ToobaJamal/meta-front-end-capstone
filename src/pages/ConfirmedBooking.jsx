@@ -1,6 +1,4 @@
-
 export default function ConfirmedBooking() {
-
     return (
       <main className="confirmed-main">
        <p className="title confirmed-title">Booking Confirmed!!!</p>
