@@ -80,7 +80,7 @@ export default function BookingForm({availableTimes, dispatch, submitForm}) {
               </select>
             </div>
           </div>
-          <input className="submit" type="submit" value="Reserve" />
+          <input className="submit" type="submit" value="Reserve" aria-label="submit button"/>
       </form>
       </main>
     )
