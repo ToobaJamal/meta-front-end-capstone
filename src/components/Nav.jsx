@@ -11,16 +11,13 @@ export default function Nav() {
     return (
       <>
       {isOpen ? <FaRegTimesCircle className="mobile-nav" onClick={toggleNav}/> : <FaGripLines className="mobile-nav" onClick={toggleNav}/>}
-      {/* <div className="mobile-nav" onClick={toggleNav}>X</div> */}
       <nav className={`nav ${isOpen ? 'active' : ''}`} onClick={toggleNav}>
-        
         <Link to="/" className="nav-item">HOME</Link>
         <a href="#" className="nav-item">ABOUT</a>
         <a href="#" className="nav-item">MENU</a>
         <Link to="/booking" className="nav-item">RESERVATIONS</Link>
         <a href="#" className="nav-item">ORDER ONLINE</a>
         <a href="#" className="nav-item">LOGIN</a>
-   
       </nav>
       </>
     )
