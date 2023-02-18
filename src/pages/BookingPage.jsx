@@ -3,27 +3,19 @@ import BookingForm from "../components/BookingForm"
 import { fetchAPI, submitAPI } from "../api"
 import { useNavigate } from "react-router-dom";
  
-  console.log(fetchAPI(new Date("2018-12-31")))
 export default function BookingPage() {
     
-    const [date, setDate] = useState(new Date())
-    // console.log(date.getDate())
-    
-
-    function initializeTimes(date) {
-      return fetchAPI(date)
-  //    return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+  const [date, setDate] = useState(new Date())
+ 
+  function initializeTimes(date) {
+    return fetchAPI(date)
     }
 
-    function updateTimes(date) {
-    // TODO: update availableTimes based on the selected date
-    // For now, we'll just return the same available times regardless of the date.
+  function updateTimes(date) {
     const dateObj = new Date(date)
     return fetchAPI(dateObj)
-  
   }
 
-  console.log(updateTimes)
   const navigate = useNavigate();
 
   function submitForm(formData) {
@@ -33,6 +25,7 @@ export default function BookingPage() {
       navigate("/confirmed");
     }
   }
+  
   function reducer(state, action) {
     let newState
     switch (action.type) {
