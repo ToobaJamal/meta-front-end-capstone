@@ -10,7 +10,9 @@ export default function Nav() {
   };
     return (
       <>
-      {isOpen ? <FaRegTimesCircle className="mobile-nav" onClick={toggleNav}/> : <FaGripLines className="mobile-nav" onClick={toggleNav}/>}
+      <div className="mobile-nav" onClick={toggleNav}>
+        {isOpen ? <FaRegTimesCircle /> : <FaGripLines />}
+      </div>
       <nav className={`nav ${isOpen ? 'active' : ''}`} onClick={toggleNav}>
         <Link to="/" className="nav-item">HOME</Link>
         <a href="#" className="nav-item">ABOUT</a>
