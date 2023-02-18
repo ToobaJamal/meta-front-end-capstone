@@ -1,6 +1,4 @@
-
 export default function Testimonials() {
-
     return (
       <div className="testimonials-parent">
         <p className="testimonials-title">Testimonials</p>
