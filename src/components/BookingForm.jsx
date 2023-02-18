@@ -7,11 +7,11 @@ export default function BookingForm({availableTimes, dispatch, submitForm}) {
         lastName: "",
         contactNumber: "",
         date: "",
-        time: "17:00",
+        time: "00:00",
         noOfGuests: 1,
         occasion: "Birthday"
     })
-    console.log(availableTimes)
+
     const handleFormChange = (event) => {
       const { name, value } = event.target
       setFormData((prevFormData) => ({
@@ -27,21 +27,12 @@ export default function BookingForm({availableTimes, dispatch, submitForm}) {
         ...prevFormData,
         [name]: value
       }))
-      
-      console.log( dispatch({ type: 'UPDATE_TIMES', payload: value }))
-      dispatch({ type: 'UPDATE_TIMES', payload: value })
-      console.log(formData.date)
+     dispatch({ type: 'UPDATE_TIMES', payload: value })
     }
-    console.log(formData)
 
     const handleSubmit = (event) => {
       event.preventDefault()
       submitForm(formData)
-    }
-
-    const isFormValid = () => {
-      const form = document.querySelector('form')
-      return form.checkValidity()
     }
 
     const currentDate = new Date().toISOString().split("T")[0]
