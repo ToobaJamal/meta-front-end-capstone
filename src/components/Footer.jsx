@@ -3,7 +3,7 @@ export default function Footer() {
 
     return (
       <footer>
-        <img src="../images/footer.png" alt="little lemon"/>
+        <img src="/images/footer.png" alt="little lemon"/>
         <div className="footer-content">
             <div className="footer-nav">
                 <p className="footer-head">Navigtion</p>

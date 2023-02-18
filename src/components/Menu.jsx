@@ -9,7 +9,7 @@ export default function Menu() {
         </div>
         <div className="cards">
             <div className="card">
-                <img className="menu-img" src="../images/greek-salad.png" alt="greek salad"/>
+                <img className="menu-img" src="/images/greek-salad.png" alt="greek salad"/>
                 <div className="name-price">
                     <p className="item-name">Greek Salad</p>
                     <p className="item-price">$12.99</p>
@@ -24,7 +24,7 @@ export default function Menu() {
                 </div>
             </div>
             <div className="card">
-                <img className="menu-img" src="../images/bruchetta.jpg" alt="bruchetta"/>
+                <img className="menu-img" src="/images/bruchetta.jpg" alt="bruchetta"/>
                 <div className="name-price">
                     <p className="item-name">Bruchetta</p>
                     <p className="item-price">$5.99</p>
@@ -38,7 +38,7 @@ export default function Menu() {
                 </div>
             </div>
             <div className="card">
-                <img className="menu-img" src="../images/lemon-dessert.jpg" alt="lemon-dessert"/>
+                <img className="menu-img" src="/images/lemon-dessert.jpg" alt="lemon-dessert"/>
                 <div className="name-price">
                     <p className="item-name">Lemon Dessert</p>
                     <p className="item-price">$5.00</p>
