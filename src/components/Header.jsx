@@ -4,7 +4,7 @@ export default function Header() {
 
     return (
       <header>
-        <Link to="/"><img src="../images/logo.png" alt="little lemon"/></Link>
+        <Link to="/"><img src="/images/logo.png" alt="little lemon"/></Link>
         <Nav/>
       </header>
     )
