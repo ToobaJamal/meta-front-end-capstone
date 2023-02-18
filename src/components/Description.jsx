@@ -9,7 +9,7 @@ export default function Description() {
                 <p className="desc-text desc">We are a family owned Mediterranean restaurant, 
                     focused on traditional recipes served with a modern twist.</p>
             </div>
-            <img className="desc-img" src="../images/hero.png" alt="hero image"/>
+            <img className="desc-img" src="/images/hero.png" alt="hero image"/>
         </div>
       </>
     )
